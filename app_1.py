@@ -22,7 +22,7 @@ df_dbh_grouped.colunms = ['tree_count']
 st.divider()
 
 
-tab1,tab2,tab3 = st.tabs('Line Chart','Bar Chart','Area Chart')
+tab1,tab2,tab3 = st.tabs(['Line Chart','Bar Chart','Area Chart'])
 with tab1:
     st.line_chart(df_dbh_grouped)
 with tab2:
