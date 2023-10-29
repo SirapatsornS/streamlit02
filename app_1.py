@@ -19,9 +19,10 @@ df_dbh_grouped = pd.DataFrame(
 df_dbh_grouped.colunms = ['tree_count']
 
 #create mutiselected filter to represent to graph
-owners = st.sidebar.mutiselect(
+owners = st.sidebar.multiselect(
     'Tree Owner Filter',
-    trees_df['caretaker'].unique()  #count distinct
+    trees_df['caretaker'].unique()
+    #count distinct
 )
 
 if owners:
