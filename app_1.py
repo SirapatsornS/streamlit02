@@ -42,13 +42,7 @@ with col3:
 #insert 1 line
 st.divider()
 
-tab1,tab2,tab3 = st.tabs(['Line Chart','Bar Chart','Area Chart'])
-with tab1:
-    st.line_chart(df_dbh_grouped)
-with tab2:
-    st.bar_chart(df_dbh_grouped)
-with tab3:
-    st.area_chart(df_dbh_grouped)
+
 
 st.caption('กราฟแสดงจำนวนต้นไม้ จัดกบุ่มตามเส้นผ่านศูนย์กลาง')
 st.title('แปลผล')
