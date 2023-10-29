@@ -29,7 +29,7 @@ if owners:
     trees_df = trees_df[trees_df['caretaker'].isin(owners)]
 
 df_dbh_grouped = pd.DataFrame(
-    trees_df.groupby(['dbh'].count()['tree_id'])
+    trees_df.groupby(['dbh']).count()['tree_id']
 )
 df_dbh_grouped.columns = ['tree_count']
 
