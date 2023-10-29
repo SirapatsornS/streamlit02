@@ -8,20 +8,20 @@ st.title('Layout and Decoration')
 st.write("""
   เราจะลองทำ San Francisco Dataset กันดู
 """)
-col1,col2,col3 = st.columns(3)
-with col1:
-    st.write('Column1')
-with col2:
-    st.write('Column2')
-with col3:
-    st.write('Column3')
 
 trees_df = pd.read_csv('trees.csv')
 df_dbh_grouped = pd.DataFrame(
     #สร้างกราฟโดย group จาก column dbh แล้วนับจำนวน tree_id (นับจำนวนต้นไม้)
     trees_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.colunms = ['tree_count']
-st.line_chart(df_dbh_grouped)
+
+col1,col2,col3 = st.columns(3)
+with col1:
+    st.line_chart(df_dbh_grouped)
+with col2:
+    st.bar_chart(df_dbh_grouped)
+with col3:
+    st.area_chart(df_dbh_grouped)
 
 st.caption('กราฟแสดงจำนวนต้นไม้ จัดกบุ่มตามเส้นผ่านศูนย์กลาง')
 st.title('แปลผล')
