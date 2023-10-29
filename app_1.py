@@ -20,7 +20,7 @@ df_dbh_grouped.colunms = ['tree_count']
 
 #create mutiselected filter to represent to graph
 owners = st.sidebar.mutiselect(
-    'Tree Owner Filter'
+    'Tree Owner Filter',
     trees_df['caretaker'].unique()  #count distinct
 )
 
