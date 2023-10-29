@@ -13,10 +13,6 @@ st.write("""
 """)
 
 trees_df = pd.read_csv('trees.csv')
-df_dbh_grouped = pd.DataFrame(
-    #สร้างกราฟโดย group จาก column dbh แล้วนับจำนวน tree_id (นับจำนวนต้นไม้)
-    trees_df.groupby(['dbh']).count()['tree_id'])
-df_dbh_grouped.colunms = ['tree_count']
 
 #create mutiselected filter to represent to graph
 owners = st.sidebar.multiselect(
@@ -29,6 +25,7 @@ if owners:
     trees_df = trees_df[trees_df['caretaker'].isin(owners)]
 
 df_dbh_grouped = pd.DataFrame(
+    #สร้างกราฟโดย group จาก column dbh แล้วนับจำนวน tree_id (นับจำนวนต้นไม้)
     trees_df.groupby(['dbh']).count()['tree_id']
 )
 df_dbh_grouped.columns = ['tree_count']
