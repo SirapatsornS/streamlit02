@@ -18,9 +18,16 @@ df_dbh_grouped = pd.DataFrame(
     trees_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.colunms = ['tree_count']
 
+col1,col2,col3 = st.columns(3)
+with col1:
+    st.write('Column1')
+with col2:
+    st.write('Column2')
+with col3:
+    st.write('Column3')
+
 #insert 1 line
 st.divider()
-
 
 tab1,tab2,tab3 = st.tabs(['Line Chart','Bar Chart','Area Chart'])
 with tab1:
