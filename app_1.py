@@ -18,6 +18,21 @@ df_dbh_grouped = pd.DataFrame(
     trees_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.colunms = ['tree_count']
 
+#create mutiselected filter to represent to graph
+owners = st.sidebar.mutiselect(
+    'Tree Owner Filter'
+    trees_df['caretaker'].unique()  #count distinct
+)
+
+if owners:
+    trees_df = trees_df[trees_df['caretaker'].isin(owners)]
+
+df_dbh_grouped = pd.DataFrame(
+    trees_df.groupby(['dbh'].count()['tree_id'])
+)
+df_dbh_grouped.columns = ['tree_count']
+
+#represent graph into column
 col1,col2,col3 = st.columns(3)
 with col1:
     st.write('Column1')
