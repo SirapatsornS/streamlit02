@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#set to wide page
 st.set_page_config(layout='wide')
 
 st.markdown('สวัสดี! *Streamlit*')
@@ -17,12 +18,16 @@ df_dbh_grouped = pd.DataFrame(
     trees_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.colunms = ['tree_count']
 
-col1,col2,col3 = st.columns(3)
-with col1:
+#insert 1 line
+st.divider()
+
+
+tab1,tab2,tab3 = st.tabs('Line Chart','Bar Chart','Area Chart')
+with tab1:
     st.line_chart(df_dbh_grouped)
-with col2:
+with tab2:
     st.bar_chart(df_dbh_grouped)
-with col3:
+with tab3:
     st.area_chart(df_dbh_grouped)
 
 st.caption('กราฟแสดงจำนวนต้นไม้ จัดกบุ่มตามเส้นผ่านศูนย์กลาง')
