@@ -56,7 +56,3 @@ st.write("""
   ส่วนใหญ่ของต้นไม้ใน sf มีเส้นผ่าศูนย์กลาง 3' (2721 ต้น)
 """)
 
-#create map tree
-trees_df = trees_df.dropna(subset=['longitude','latitude'])
-trees_df = trees_df.sample(n=1000,replace=True)
-st.map(trees_df)
