@@ -5,8 +5,16 @@ import matplotlib.pyplot as plt
 
 from st_pages import Page, show_pages, add_page_title
 
+show_pages([
+    Page("app.py", "Home", "🏠"),
+    Page("pages/tab.py", "Tab Layout", "📖"),
+    Page("pages/map.py", "Map Layout", "🗺️"),
+])
+
+add_page_title()
+
 #set to wide page
-st.set_page_config(layout='wide')
+#st.set_page_config(layout='wide')
 
 st.markdown('สวัสดี! *Streamlit*')
 st.title('Layout and Decoration')
