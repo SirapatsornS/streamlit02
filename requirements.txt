@@ -15,4 +15,5 @@ scikit-learn
 seaborn
 streamlit
 streamlit-lottie
+st-pages
 watchdog
